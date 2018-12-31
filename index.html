@@ -4,6 +4,33 @@
   <body>
   <h1>hello there!</h1>
   <script>
-    document.write(Math.floor(Math.random() * 10));</script>
+    function rand(from, to){
+      return Math.floor(Math.random() * (to - from) +  from);
+    }
+    
+    function shuffle(a) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
+}
+    
+    var apply = ["a renewed passport","a new passport","a visa","a mashmouli stamp","mashmouli exemption","a marriage certificate"];
+    
+    var needs = ["to fill out " + rand(2,10) + " forms", rand(2,10) +" passport photos", "your original British passport plus " + rand(2,10) + " copies of all pages", "your original Iranian passport plus " + rand(2,10) + " copies of all pages", "your original shenasname plus " + rand(2,10) + " copies of all pages", "your original cart melli plus " + rand(2,10) + " copies of both sides", "a blood test", "a letter from your doctor", "a vekalat from someone in Iran", "your dad’s permission", "your dad’s dad’s permission ", "a davatnameh from Iran", "the presidents permission", "the president’s ammeh’s permission", "a lawyer in Iran ", rand(2,10) + " fully peeled potatoes", "a high score on street fighter 2", "a lock of your first born’s hair", "your blockbuster membership card"];
+    shuffle(needs);
+    var musts = ["be pregnant", "have children", "have less than 6 months to live", "not have aids ", "be less than 2 years old ", "have no legs", "be legally blind", "have a high fibre diet", "be taller than 2.1m", "weigh less than 30kg"];
+    var must = musts[rand(0, musts.length)];
+    console.log(rand(0,6));
+    var randApply = apply[rand(0, apply.length)];
+
+    document.write("In order to apply for " + randApply +
+    ", you need to bring " + needs[0]  + ", along with " + needs[1] + " and " 
+    + needs[2] + ", and must also " + must);
+    </script>
   
   </body></html>
